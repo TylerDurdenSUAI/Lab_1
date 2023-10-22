@@ -1,32 +1,31 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <fstream>
 #include "Keeper.h"
 #include "Base.h"
 
 using namespace std;
 
-// класс Keeper
-// конструктор по умолчанию
+// РєР»Р°СЃСЃ Keeper
+// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 Keeper::Keeper()
 {
     this->array = new Base * [1];
     this->size = 1;
     this->countElement = 0;
-
-    cout << "Вызван конструктор по умолчанию класса - Keeper" << endl;
+    cout << "Р’С‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ РєР»Р°СЃСЃР° - Keeper" << endl;
 }
 
-// конструктор c параметром
+// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ c РїР°СЂР°РјРµС‚СЂРѕРј
 Keeper::Keeper(int size)
 {
     this->array = new Base * [size];
     this->size = size;
     this->countElement = 0;
 
-    cout << "Вызван конструктор с параметром класса - Keeper" << endl;
+    cout << "Р’С‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂРѕРј РєР»Р°СЃСЃР° - Keeper" << endl;
 }
 
-// конструктор копирования
+// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 Keeper::Keeper(const Keeper& K)
 {
     this->array = new Base * [K.size];
@@ -38,25 +37,25 @@ Keeper::Keeper(const Keeper& K)
         this->array[count] = K.array[count];
     }
 
-    cout << "Вызван конструктор копирования класса - Keeper" << endl;
+    cout << "Р’С‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ РєР»Р°СЃСЃР° - Keeper" << endl;
 }
 
-// деструктор
+// РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 Keeper::~Keeper()
 {
     delete[] array;
 
-    cout << "Вызван деструктор класса - Keeper" << endl;
+    cout << "Р’С‹Р·РІР°РЅ РґРµСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР° - Keeper" << endl;
 }
 
-// основные методы
-// метод добавления элемента
+// РѕСЃРЅРѕРІРЅС‹Рµ РјРµС‚РѕРґС‹
+// РјРµС‚РѕРґ РґРѕР±Р°РІР»РµРЅРёСЏ СЌР»РµРјРµРЅС‚Р°
 void Keeper::Set()
 {
-    cout << "Выберите, что вы хотите добавить:" << endl;
-    cout << "1 - Книги \n"
-        << "2 - Учебники \n"
-        << "3 - Канцелярия" << endl;
+    cout << "Р’С‹Р±РµСЂРёС‚Рµ, С‡С‚Рѕ РІС‹ С…РѕС‚РёС‚Рµ РґРѕР±Р°РІРёС‚СЊ:" << endl;
+    cout << "1 - РљРЅРёРіРё \n"
+        << "2 - РЈС‡РµР±РЅРёРєРё \n"
+        << "3 - РљР°РЅС†РµР»СЏСЂРёСЏ" << endl;
     string choice;
 
     try
@@ -70,42 +69,42 @@ void Keeper::Set()
     }
     catch (const std::exception& e)
     {
-        cout << "Некорректный ввод" << endl;
+        cout << "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ" << endl;
     }
     catch (const char* mssg)
     {
-        cout << "Неверный выбор" << endl;
+        cout << "РќРµРІРµСЂРЅС‹Р№ РІС‹Р±РѕСЂ" << endl;
     }
 
-    // если массив переполнен
+    // РµСЃР»Рё РјР°СЃСЃРёРІ РїРµСЂРµРїРѕР»РЅРµРЅ
     if (this->countElement == this->size)
     {
-        Base** buf_array = new Base * [size]; // создаем буферный массив для копирования объектов
+        Base** buf_array = new Base * [size]; // СЃРѕР·РґР°РµРј Р±СѓС„РµСЂРЅС‹Р№ РјР°СЃСЃРёРІ РґР»СЏ РєРѕРїРёСЂРѕРІР°РЅРёСЏ РѕР±СЉРµРєС‚РѕРІ
 
         for (int count = 0; count < size; count++)
         {
-            buf_array[count] = this->array[count]; // копируем элементы
+            buf_array[count] = this->array[count]; // РєРѕРїРёСЂСѓРµРј СЌР»РµРјРµРЅС‚С‹
         }
 
-        delete[] this->array; // удаляем память под массив
+        delete[] this->array; // СѓРґР°Р»СЏРµРј РїР°РјСЏС‚СЊ РїРѕРґ РјР°СЃСЃРёРІ
 
-        // выделяем новую память под наш массив
+        // РІС‹РґРµР»СЏРµРј РЅРѕРІСѓСЋ РїР°РјСЏС‚СЊ РїРѕРґ РЅР°С€ РјР°СЃСЃРёРІ
         try
         {
-            this->array = new Base * [size * 2]; // выделяем доп. память
+            this->array = new Base * [size * 2]; // РІС‹РґРµР»СЏРµРј РґРѕРї. РїР°РјСЏС‚СЊ
         }
         catch (const std::exception& e)
         {
-            std::cerr << "Память не удалось выделить" << endl;
+            std::cerr << "РџР°РјСЏС‚СЊ РЅРµ СѓРґР°Р»РѕСЃСЊ РІС‹РґРµР»РёС‚СЊ" << endl;
             exit(1);
         }
 
-        this->size = size * 2; // увеличиваем размер массива
+        this->size = size * 2; // СѓРІРµР»РёС‡РёРІР°РµРј СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР°
 
-        // копируем старые элементы
+        // РєРѕРїРёСЂСѓРµРј СЃС‚Р°СЂС‹Рµ СЌР»РµРјРµРЅС‚С‹
         for (int count = 0; count < countElement; count++)
         {
-            this->array[count] = buf_array[count]; // копируем элементы
+            this->array[count] = buf_array[count]; // РєРѕРїРёСЂСѓРµРј СЌР»РµРјРµРЅС‚С‹
         }
     }
 
@@ -131,20 +130,20 @@ void Keeper::Set()
     }
 }
 
-// метод получения элементов
+// РјРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ СЌР»РµРјРµРЅС‚РѕРІ
 void Keeper::Get()
 {
-    cout << "Данные:" << endl;
+    cout << "Р”Р°РЅРЅС‹Рµ:" << endl;
     for (int count = 0; count < countElement; count++)
     {
         array[count]->Get();
     }
 }
 
-// метод получения элементов
+// РјРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ СЌР»РµРјРµРЅС‚РѕРІ
 void Keeper::GetChoice()
 {
-    cout << "Введите номер, который вы хотите увидеть: ";
+    cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ, РєРѕС‚РѕСЂС‹Р№ РІС‹ С…РѕС‚РёС‚Рµ СѓРІРёРґРµС‚СЊ: ";
     string id;
     try
     {
@@ -157,20 +156,20 @@ void Keeper::GetChoice()
     }
     catch (const std::exception& e)
     {
-        cout << "Некорректный ввод" << endl;
+        cout << "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ" << endl;
     }
     catch (const char* mssg)
     {
-        cout << "Неверный выбор" << endl;
+        cout << "РќРµРІРµСЂРЅС‹Р№ РІС‹Р±РѕСЂ" << endl;
     }
 
     array[stoi(id)]->Get();
 }
 
-// метод удаления
+// РјРµС‚РѕРґ СѓРґР°Р»РµРЅРёСЏ
 void Keeper::Delete()
 {
-    cout << "Введите номер, который вы хотите удалить: ";
+    cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ, РєРѕС‚РѕСЂС‹Р№ РІС‹ С…РѕС‚РёС‚Рµ СѓРґР°Р»РёС‚СЊ: ";
     string id;
     try
     {
@@ -183,11 +182,11 @@ void Keeper::Delete()
     }
     catch (const std::exception& e)
     {
-        cout << "Некорректный ввод" << endl;
+        cout << "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ" << endl;
     }
     catch (const char* mssg)
     {
-        cout << "Неверный выбор" << endl;
+        cout << "РќРµРІРµСЂРЅС‹Р№ РІС‹Р±РѕСЂ" << endl;
     }
 
     *this -= stoi(id);
@@ -195,7 +194,7 @@ void Keeper::Delete()
 
 Keeper& Keeper::operator-=(int element)
 {
-    // сдвигаем все элементы
+    // СЃРґРІРёРіР°РµРј РІСЃРµ СЌР»РµРјРµРЅС‚С‹
 
     for (int count = element; count < countElement - 1; count++)
     {
@@ -206,10 +205,10 @@ Keeper& Keeper::operator-=(int element)
     return *this;
 }
 
-// метод изменения
+// РјРµС‚РѕРґ РёР·РјРµРЅРµРЅРёСЏ
 void Keeper::Change()
 {
-    cout << "Введите номер, данные которого вы хотите изменить: ";
+    cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ, РґР°РЅРЅС‹Рµ РєРѕС‚РѕСЂРѕРіРѕ РІС‹ С…РѕС‚РёС‚Рµ РёР·РјРµРЅРёС‚СЊ: ";
     string id;
     try
     {
@@ -222,13 +221,233 @@ void Keeper::Change()
     }
     catch (const std::exception& e)
     {
-        cout << "Некорректный ввод" << endl;
+        cout << "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ" << endl;
     }
     catch (const char* mssg)
     {
-        cout << "Неверный выбор" << endl;
+        cout << "РќРµРІРµСЂРЅС‹Р№ РІС‹Р±РѕСЂ" << endl;
     }
 
     array[stoi(id)]->Change();
 }
+// РјРµС‚РѕРґ СЃРѕС…СЂР°РЅРµРЅРёСЏ РІ С„Р°Р№Р»
+void Keeper::Save()
+{
+    cout << "\nSAVE" << endl;
 
+    ofstream loadB;
+    ofstream loadS;
+    ofstream loadC;
+    loadB.open("books.txt");
+    loadS.open("studybooks.txt");
+    loadC.open("chancellery.txt");
+
+    int countB = 0;
+    int countS = 0;
+    int countC = 0;
+
+    for (int i = 0; i < countElement; i++)
+    {
+        if (this->array[i]->TypeID() == 1)
+        {
+            loadB << this->array[i]->Save(countB) << endl;
+            countB++;
+
+            loadB << this->array[i]->Save(countB) << endl;
+            countB++;
+
+            loadB << this->array[i]->Save(countB) << endl;
+            countB++;
+
+            loadB << this->array[i]->Save(countB) << endl;
+            countB++;
+
+            loadB << this->array[i]->Save(countB) << endl;
+            countB++;
+
+            loadB << this->array[i]->Save(countB) << endl;
+            countB++;
+
+            loadB << this->array[i]->Save(countB) << endl;
+            countB = 0;
+        }
+
+        else if (this->array[i]->TypeID() == 2)
+        {
+            loadS << this->array[i]->Save(countS) << endl;
+            countS++;
+
+            loadS << this->array[i]->Save(countS) << endl;
+            countS++;
+
+            loadS << this->array[i]->Save(countS) << endl;
+            countS++;
+
+            loadS << this->array[i]->Save(countS) << endl;
+            countS++;
+
+            loadS << this->array[i]->Save(countS) << endl;
+            countS++;
+
+            loadS << this->array[i]->Save(countS) << endl;
+            countS++;
+
+            loadS << this->array[i]->Save(countS) << endl;
+            countS = 0;
+        }
+
+        else if (this->array[i]->TypeID() == 3)
+        {
+            loadC << this->array[i]->Save(countC) << endl;
+            countC++;
+
+            loadC << this->array[i]->Save(countC) << endl;
+            countC++;
+
+            loadC << this->array[i]->Save(countC) << endl;
+            countC++;
+
+            loadC << this->array[i]->Save(countC) << endl;
+            countC = 0;
+        }
+    }
+
+    cout << "\nSAVE COMPLETE" << endl;
+
+    loadB.close();
+    loadS.close();
+    loadC.close();
+}
+
+// РјРµС‚РѕРґ РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёСЏ РёР· С„Р°Р№Р»Р°
+void Keeper::Load()
+{
+    cout << "\nLOAD" << endl;
+
+    ifstream loadB;
+    ifstream loadS;
+    ifstream loadC;
+    loadB.open("books.txt");
+    loadS.open("studybooks.txt");
+    loadC.open("chancellery.txt");
+
+    if (loadB.is_open() and loadS.is_open() and loadC.is_open())
+    {
+        string line; // СЃС‚СЂРѕРєР°, РІ РєРѕС‚РѕСЂСѓСЋ Р±СѓРґРµРј СЃС‡РёС‚С‹РІР°С‚СЊ
+        int count = 0; // СЃС‡РµС‚С‡РёРє РґР»СЏ Р·Р°РїРёСЃРё
+
+        while (true)
+        {
+            if (!getline(loadB, line)) break;
+
+            Base* ptr_book = new Book(); // СЃРѕР·РґР°РµРј РѕР±СЉРµРєС‚ - СЃС‚СѓРґРµРЅС‚
+
+            ptr_book->Load(count, line);
+            count++;
+
+            getline(loadB, line);
+            ptr_book->Load(count, line);
+            count++;
+
+            getline(loadB, line);
+            ptr_book->Load(count, line);
+            count++;
+
+            getline(loadB, line);
+            ptr_book->Load(count, line);
+            count++;
+
+            getline(loadB, line);
+            ptr_book->Load(count, line);
+            count++;
+
+            getline(loadB, line);
+            ptr_book->Load(count, line);
+            count++;
+
+            getline(loadB, line);
+            ptr_book->Load(count, line);
+
+            count = 0;
+
+            this->array[countElement++] = ptr_book; // РґРѕР±Р°РІР»СЏРµРј РІ РјР°СЃСЃРёРІ
+        }
+
+        count = 0; // СЃС‡РµС‚С‡РёРє РґР»СЏ Р·Р°РїРёСЃРё
+
+        while (true)
+        {
+            if (!getline(loadS, line)) break;
+
+            Base* ptr_studybook = new StudyBook(); // СЃРѕР·РґР°РµРј РѕР±СЉРµРєС‚ - СЃС‚СѓРґРµРЅС‚
+
+            ptr_studybook->Load(count, line);
+            count++;
+
+            getline(loadS, line);
+            ptr_studybook->Load(count, line);
+            count++;
+
+            getline(loadS, line);
+            ptr_studybook->Load(count, line);
+            count++;
+
+            getline(loadS, line);
+            ptr_studybook->Load(count, line);
+            count++;
+
+            getline(loadS, line);
+            ptr_studybook->Load(count, line);
+            count++;
+
+            getline(loadS, line);
+            ptr_studybook->Load(count, line);
+            count++;
+
+            getline(loadS, line);
+            ptr_studybook->Load(count, line);
+
+            count = 0;
+
+            this->array[countElement++] = ptr_studybook; // РґРѕР±Р°РІР»СЏРµРј РІ РјР°СЃСЃРёРІ
+        }
+
+        count = 0; // СЃС‡РµС‚С‡РёРє РґР»СЏ Р·Р°РїРёСЃРё
+
+        while (true)
+        {
+            if (!getline(loadC, line)) break;
+
+            Base* ptr_chancellery = new Chancellery(); // СЃРѕР·РґР°РµРј РѕР±СЉРµРєС‚ - СЃС‚СѓРґРµРЅС‚
+
+            ptr_chancellery->Load(count, line);
+            count++;
+
+            getline(loadC, line);
+            ptr_chancellery->Load(count, line);
+            count++;
+
+            getline(loadC, line);
+            ptr_chancellery->Load(count, line);
+            count++;
+
+            getline(loadC, line);
+            ptr_chancellery->Load(count, line);
+
+            count = 0;
+
+            this->array[countElement++] = ptr_chancellery; // РґРѕР±Р°РІР»СЏРµРј РІ РјР°СЃСЃРёРІ
+        }
+
+        cout << "\nLOAD COMPLETE" << endl;
+    }
+
+    else
+    {
+        cout << "\nРћС€РёР±РєР° РѕС‚РєСЂС‹С‚РёСЏ С„Р°Р№Р»РѕРІ" << endl;
+    }
+
+    loadB.close();
+    loadS.close();
+    loadC.close();
+}

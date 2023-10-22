@@ -1,149 +1,149 @@
-#include <iostream>
+п»ї#include <iostream>
 #include "Base.h"
 
 using namespace std;
 
 Base::Base()
 {
-    cout << "Вызван конструктор класса Base" << endl;
+    cout << "Р’С‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР° Base" << endl;
 }
 Base::Base(int size)
 {
-    cout << "Вызван конструктор с параметром класса Base" << endl;
+    cout << "Р’С‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂРѕРј РєР»Р°СЃСЃР° Base" << endl;
 }
 Base::Base(const Base& B)
 {
-    cout << "Вызван конструктор копирования класса Base" << endl;
+    cout << "Р’С‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ РєР»Р°СЃСЃР° Base" << endl;
 }
 Base::~Base()
 {
-    cout << "Вызван деструктор класса Base" << endl;
+    cout << "Р’С‹Р·РІР°РЅ РґРµСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР° Base" << endl;
 }
 
-// класс Book
-// конструктор по умолчанию
+// РєР»Р°СЃСЃ Book
+// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 Book::Book()
 {
-    this->name = "NONE"; // название
-    this->author = "NONE"; // автор
-    this->year = "NONE"; // год выпуска
-    this->annotation = "NONE"; // аннотация
-    this->genre = "NONE"; // жанр
-    this->volume_of_page = "NONE"; // объем страниц
-    this->cost = "NONE"; // цена
+    this->name = "NONE"; // РЅР°Р·РІР°РЅРёРµ
+    this->author = "NONE"; // Р°РІС‚РѕСЂ
+    this->year = "NONE"; // РіРѕРґ РІС‹РїСѓСЃРєР°
+    this->annotation = "NONE"; // Р°РЅРЅРѕС‚Р°С†РёСЏ
+    this->genre = "NONE"; // Р¶Р°РЅСЂ
+    this->volume_of_page = "NONE"; // РѕР±СЉРµРј СЃС‚СЂР°РЅРёС†
+    this->cost = "NONE"; // С†РµРЅР°
 
-    cout << "Вызван конструктор по умолчанию класса - Book" << endl;
+    cout << "Р’С‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ РєР»Р°СЃСЃР° - Book" << endl;
 }
 
-// конструктор с параметром
+// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂРѕРј
 Book::Book(string name, string author, string year, string annotation, string genre, string volume_of_page, string cost)
 {
-    this->name = name; // название
-    this->author = author; // автор
-    this->year = year; // год выпуска
-    this->annotation = annotation; // аннотация
-    this->genre = genre; // жанр
-    this->volume_of_page = volume_of_page; // объем страниц
-    this->cost = cost; // цена
+    this->name = name; // РЅР°Р·РІР°РЅРёРµ
+    this->author = author; // Р°РІС‚РѕСЂ
+    this->year = year; // РіРѕРґ РІС‹РїСѓСЃРєР°
+    this->annotation = annotation; // Р°РЅРЅРѕС‚Р°С†РёСЏ
+    this->genre = genre; // Р¶Р°РЅСЂ
+    this->volume_of_page = volume_of_page; // РѕР±СЉРµРј СЃС‚СЂР°РЅРёС†
+    this->cost = cost; // С†РµРЅР°
 
-    cout << "Вызван конструктор с параметром класса - Book" << endl;
+    cout << "Р’С‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂРѕРј РєР»Р°СЃСЃР° - Book" << endl;
 }
 
-// конструктор копирования
+// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 Book::Book(const Book& B)
 {
-    this->name = B.name; // название
-    this->author = B.author; // автор
-    this->year = B.year; // год выпуска
-    this->annotation = B.annotation; // аннотация
-    this->genre = B.genre; // жанр
-    this->volume_of_page = B.volume_of_page; // объем страниц
-    this->cost = B.cost; // цена
+    this->name = B.name; // РЅР°Р·РІР°РЅРёРµ
+    this->author = B.author; // Р°РІС‚РѕСЂ
+    this->year = B.year; // РіРѕРґ РІС‹РїСѓСЃРєР°
+    this->annotation = B.annotation; // Р°РЅРЅРѕС‚Р°С†РёСЏ
+    this->genre = B.genre; // Р¶Р°РЅСЂ
+    this->volume_of_page = B.volume_of_page; // РѕР±СЉРµРј СЃС‚СЂР°РЅРёС†
+    this->cost = B.cost; // С†РµРЅР°
 
-    cout << "Вызван конструктор копирования класса - Book" << endl;
+    cout << "Р’С‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ РєР»Р°СЃСЃР° - Book" << endl;
 }
 
-// деструктор
+// РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 Book::~Book()
 {
-    cout << "Вызван деструктор класса - Book" << endl;
+    cout << "Р’С‹Р·РІР°РЅ РґРµСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР° - Book" << endl;
 }
 
-// основные методы
-// метод установки значения
+// РѕСЃРЅРѕРІРЅС‹Рµ РјРµС‚РѕРґС‹
+// РјРµС‚РѕРґ СѓСЃС‚Р°РЅРѕРІРєРё Р·РЅР°С‡РµРЅРёСЏ
 void Book::Set()
 {
     string buf;
     getline(cin, buf);
 
-    cout << "Введите данные о книге:" << endl;
+    cout << "Р’РІРµРґРёС‚Рµ РґР°РЅРЅС‹Рµ Рѕ РєРЅРёРіРµ:" << endl;
 
-    cout << "Название: ";
+    cout << "РќР°Р·РІР°РЅРёРµ: ";
     getline(cin, this->name);
     //cin >> this->name;
 
-    cout << "Автор: ";
+    cout << "РђРІС‚РѕСЂ: ";
     getline(cin, this->author);
     //cin >> this->author;
 
-    cout << "Год выпуска: ";
+    cout << "Р“РѕРґ РІС‹РїСѓСЃРєР°: ";
     getline(cin, this->year);
     //cin >> year;
 
-    cout << "Аннотация: ";
+    cout << "РђРЅРЅРѕС‚Р°С†РёСЏ: ";
     getline(cin, this->annotation);
     //cin >> this->annotation;
 
-    cout << "Жанр: ";
+    cout << "Р–Р°РЅСЂ: ";
     getline(cin, this->genre);
     //cin >> this->genre;
 
-    cout << "Объем страниц: ";
+    cout << "РћР±СЉРµРј СЃС‚СЂР°РЅРёС†: ";
     getline(cin, this->volume_of_page);
     //cin >> this->volume_of_page;
 
-    cout << "Цена: ";
+    cout << "Р¦РµРЅР°: ";
     getline(cin, this->cost);
     //cin >> this->cost;
 }
 
-// метод получения значений
+// РјРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ Р·РЅР°С‡РµРЅРёР№
 void Book::Get()
 {
-    cout << "~~~Информация о книге~~~" << endl;
-    cout << "Название: " << this->name << endl;
-    cout << "Автор: " << this->author << endl;
-    cout << "Год выпуска: " << this->year << endl;
-    cout << "Аннотация: " << this->annotation << endl;
-    cout << "Жанр: " << this->genre << endl;
-    cout << "Объем страниц: " << this->volume_of_page << endl;
-    cout << "Цена: " << this->cost << endl;
+    cout << "~~~РРЅС„РѕСЂРјР°С†РёСЏ Рѕ РєРЅРёРіРµ~~~" << endl;
+    cout << "РќР°Р·РІР°РЅРёРµ: " << this->name << endl;
+    cout << "РђРІС‚РѕСЂ: " << this->author << endl;
+    cout << "Р“РѕРґ РІС‹РїСѓСЃРєР°: " << this->year << endl;
+    cout << "РђРЅРЅРѕС‚Р°С†РёСЏ: " << this->annotation << endl;
+    cout << "Р–Р°РЅСЂ: " << this->genre << endl;
+    cout << "РћР±СЉРµРј СЃС‚СЂР°РЅРёС†: " << this->volume_of_page << endl;
+    cout << "Р¦РµРЅР°: " << this->cost << endl;
     cout << "~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 }
 
-// метод удаления данных
+// РјРµС‚РѕРґ СѓРґР°Р»РµРЅРёСЏ РґР°РЅРЅС‹С…
 void Book::Delete()
 {
-    this->name = "NONE"; // название
-    this->author = "NONE"; // автор
-    this->year = "NONE"; // год выпуска
-    this->annotation = "NONE"; // аннотация
-    this->genre = "NONE"; // жанр
-    this->volume_of_page = "NONE"; // объем страниц
-    this->cost = "NONE"; // цена
+    this->name = "NONE"; // РЅР°Р·РІР°РЅРёРµ
+    this->author = "NONE"; // Р°РІС‚РѕСЂ
+    this->year = "NONE"; // РіРѕРґ РІС‹РїСѓСЃРєР°
+    this->annotation = "NONE"; // Р°РЅРЅРѕС‚Р°С†РёСЏ
+    this->genre = "NONE"; // Р¶Р°РЅСЂ
+    this->volume_of_page = "NONE"; // РѕР±СЉРµРј СЃС‚СЂР°РЅРёС†
+    this->cost = "NONE"; // С†РµРЅР°
 }
 
-// метод изменения данных
+// РјРµС‚РѕРґ РёР·РјРµРЅРµРЅРёСЏ РґР°РЅРЅС‹С…
 void Book::Change()
 {
-    cout << "Выберите, что вы хотите изменить:" << endl;
-    cout << "1 - Название \n"
-        << "2 - Автор \n"
-        << "3 - Год выпуска \n"
-        << "4 - Аннотация \n"
-        << "5 - Жанр \n"
-        << "6 - Объем страниц \n"
-        << "7 - Цена \n"
+    cout << "Р’С‹Р±РµСЂРёС‚Рµ, С‡С‚Рѕ РІС‹ С…РѕС‚РёС‚Рµ РёР·РјРµРЅРёС‚СЊ:" << endl;
+    cout << "1 - РќР°Р·РІР°РЅРёРµ \n"
+        << "2 - РђРІС‚РѕСЂ \n"
+        << "3 - Р“РѕРґ РІС‹РїСѓСЃРєР° \n"
+        << "4 - РђРЅРЅРѕС‚Р°С†РёСЏ \n"
+        << "5 - Р–Р°РЅСЂ \n"
+        << "6 - РћР±СЉРµРј СЃС‚СЂР°РЅРёС† \n"
+        << "7 - Р¦РµРЅР° \n"
         << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 
     string choice;
@@ -159,11 +159,11 @@ void Book::Change()
     }
     catch (const std::exception& e)
     {
-        cout << "Некорректный ввод" << endl;
+        cout << "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ" << endl;
     }
     catch (const char* mssg)
     {
-        cout << "Неверный ввод" << endl;
+        cout << "РќРµРІРµСЂРЅС‹Р№ РІРІРѕРґ" << endl;
     }
 
     string buf;
@@ -171,178 +171,178 @@ void Book::Change()
 
     if (stoi(choice) == 1)
     {
-        cout << "Название: ";
+        cout << "РќР°Р·РІР°РЅРёРµ: ";
         getline(cin, this->name);
         //cin >> this->name;
     }
 
     else if (stoi(choice) == 2)
     {
-        cout << "Автор: ";
+        cout << "РђРІС‚РѕСЂ: ";
         getline(cin, this->author);
         //cin >> this->author;
     }
 
     else if (stoi(choice) == 3)
     {
-        cout << "Год выпуска: ";
+        cout << "Р“РѕРґ РІС‹РїСѓСЃРєР°: ";
         getline(cin, this->year);
         //cin >> year;
     }
 
     else if (stoi(choice) == 4)
     {
-        cout << "Аннотация: ";
+        cout << "РђРЅРЅРѕС‚Р°С†РёСЏ: ";
         getline(cin, this->annotation);
         //cin >> this->annotation;
     }
 
     else if (stoi(choice) == 5)
     {
-        cout << "Жанр: ";
+        cout << "Р–Р°РЅСЂ: ";
         getline(cin, this->genre);
         //cin >> this->genre;
     }
 
     else if (stoi(choice) == 6)
     {
-        cout << "Объем страниц: ";
+        cout << "РћР±СЉРµРј СЃС‚СЂР°РЅРёС†: ";
         getline(cin, this->volume_of_page);
         //cin >> this->volume_of_page;
     }
 
     else
     {
-        cout << "Цена: ";
+        cout << "Р¦РµРЅР°: ";
         getline(cin, this->cost);
         //cin >> this->cost;
     }
 }
 
-// класс StudyBook
-// конструктор по умолчанию
+// РєР»Р°СЃСЃ StudyBook
+// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 StudyBook::StudyBook()
 {
-    this->name = "NONE"; // название
-    this->author = "NONE"; // автор
-    this->year = "NONE"; // год выпуска
-    this->educational_institution = "NONE"; // учебное заведение
-    this->year_of_study = "NONE"; // год обучения
-    this->volume_of_page = "NONE"; // объем страниц
-    this->cost = "NONE"; // цена
+    this->name = "NONE"; // РЅР°Р·РІР°РЅРёРµ
+    this->author = "NONE"; // Р°РІС‚РѕСЂ
+    this->year = "NONE"; // РіРѕРґ РІС‹РїСѓСЃРєР°
+    this->educational_institution = "NONE"; // СѓС‡РµР±РЅРѕРµ Р·Р°РІРµРґРµРЅРёРµ
+    this->year_of_study = "NONE"; // РіРѕРґ РѕР±СѓС‡РµРЅРёСЏ
+    this->volume_of_page = "NONE"; // РѕР±СЉРµРј СЃС‚СЂР°РЅРёС†
+    this->cost = "NONE"; // С†РµРЅР°
 
-    cout << "Вызван конструктор по умолчанию класса - StudyBook" << endl;
+    cout << "Р’С‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ РєР»Р°СЃСЃР° - StudyBook" << endl;
 }
 
-// конструктор с параметром
+// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂРѕРј
 StudyBook::StudyBook(string name, string author, string year, string educational_institution, string year_of_study, string volume_of_page, string cost)
 {
-    this->name = name; // название
-    this->author = author; // автор
-    this->year = year; // год выпуска
-    this->educational_institution = educational_institution; // учебное заведение
-    this->year_of_study = year_of_study; // год обучения
-    this->volume_of_page = volume_of_page; // объем страниц
-    this->cost = cost; // цена
+    this->name = name; // РЅР°Р·РІР°РЅРёРµ
+    this->author = author; // Р°РІС‚РѕСЂ
+    this->year = year; // РіРѕРґ РІС‹РїСѓСЃРєР°
+    this->educational_institution = educational_institution; // СѓС‡РµР±РЅРѕРµ Р·Р°РІРµРґРµРЅРёРµ
+    this->year_of_study = year_of_study; // РіРѕРґ РѕР±СѓС‡РµРЅРёСЏ
+    this->volume_of_page = volume_of_page; // РѕР±СЉРµРј СЃС‚СЂР°РЅРёС†
+    this->cost = cost; // С†РµРЅР°
 
-    cout << "Вызван конструктор с параметром класса - StudyBook" << endl;
+    cout << "Р’С‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂРѕРј РєР»Р°СЃСЃР° - StudyBook" << endl;
 }
 
-// конструктор копирования
+// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 StudyBook::StudyBook(const StudyBook& S)
 {
-    this->name = S.name; // название
-    this->author = S.author; // автор
-    this->year = S.year; // год выпуска
-    this->educational_institution = S.educational_institution; // аннотация
-    this->year_of_study = S.year_of_study; // жанр
-    this->volume_of_page = S.volume_of_page; // объем страниц
-    this->cost = S.cost; // цена
+    this->name = S.name; // РЅР°Р·РІР°РЅРёРµ
+    this->author = S.author; // Р°РІС‚РѕСЂ
+    this->year = S.year; // РіРѕРґ РІС‹РїСѓСЃРєР°
+    this->educational_institution = S.educational_institution; // Р°РЅРЅРѕС‚Р°С†РёСЏ
+    this->year_of_study = S.year_of_study; // Р¶Р°РЅСЂ
+    this->volume_of_page = S.volume_of_page; // РѕР±СЉРµРј СЃС‚СЂР°РЅРёС†
+    this->cost = S.cost; // С†РµРЅР°
 
-    cout << "Вызван конструктор копирования класса - StudyBook" << endl;
+    cout << "Р’С‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ РєР»Р°СЃСЃР° - StudyBook" << endl;
 }
 
-// деструктор
+// РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 StudyBook::~StudyBook()
 {
-    cout << "Вызван деструктор класса - StudyBook" << endl;
+    cout << "Р’С‹Р·РІР°РЅ РґРµСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР° - StudyBook" << endl;
 }
 
-// основные методы
-// метод установки значения
+// РѕСЃРЅРѕРІРЅС‹Рµ РјРµС‚РѕРґС‹
+// РјРµС‚РѕРґ СѓСЃС‚Р°РЅРѕРІРєРё Р·РЅР°С‡РµРЅРёСЏ
 void StudyBook::Set()
 {
     string buf;
     getline(cin, buf);
 
-    cout << "Введите данные о книге:" << endl;
+    cout << "Р’РІРµРґРёС‚Рµ РґР°РЅРЅС‹Рµ Рѕ РєРЅРёРіРµ:" << endl;
 
-    cout << "Название: ";
+    cout << "РќР°Р·РІР°РЅРёРµ: ";
     getline(cin, this->name);
     //cin >> this->name;
 
-    cout << "Автор: ";
+    cout << "РђРІС‚РѕСЂ: ";
     getline(cin, this->author);
     //cin >> this->author;
 
-    cout << "Год выпуска: ";
+    cout << "Р“РѕРґ РІС‹РїСѓСЃРєР°: ";
     getline(cin, this->year);
     //cin >> year;
 
-    cout << "Учебное заведение: ";
+    cout << "РЈС‡РµР±РЅРѕРµ Р·Р°РІРµРґРµРЅРёРµ: ";
     getline(cin, this->educational_institution);
     //cin >> educational_institution;
 
-    cout << "Год обучения: ";
+    cout << "Р“РѕРґ РѕР±СѓС‡РµРЅРёСЏ: ";
     getline(cin, this->year_of_study);
     //cin >> year_of_study;
 
-    cout << "Объем страниц: ";
+    cout << "РћР±СЉРµРј СЃС‚СЂР°РЅРёС†: ";
     getline(cin, this->volume_of_page);
     //cin >> this->volume_of_page;
 
-    cout << "Цена: ";
+    cout << "Р¦РµРЅР°: ";
     getline(cin, this->cost);
     //cin >> this->cost;
 }
 
-// метод получения значений
+// РјРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ Р·РЅР°С‡РµРЅРёР№
 void StudyBook::Get()
 {
-    cout << "~~~Информация об учебнике~~~" << endl;
-    cout << "Название: " << this->name << endl;
-    cout << "Автор: " << this->author << endl;
-    cout << "Год выпуска: " << this->year << endl;
-    cout << "Учебное заведение: " << this->educational_institution << endl;
-    cout << "Год обучения: " << this->year_of_study << endl;
-    cout << "Объем страниц: " << this->volume_of_page << endl;
-    cout << "Цена: " << this->cost << endl;
+    cout << "~~~РРЅС„РѕСЂРјР°С†РёСЏ РѕР± СѓС‡РµР±РЅРёРєРµ~~~" << endl;
+    cout << "РќР°Р·РІР°РЅРёРµ: " << this->name << endl;
+    cout << "РђРІС‚РѕСЂ: " << this->author << endl;
+    cout << "Р“РѕРґ РІС‹РїСѓСЃРєР°: " << this->year << endl;
+    cout << "РЈС‡РµР±РЅРѕРµ Р·Р°РІРµРґРµРЅРёРµ: " << this->educational_institution << endl;
+    cout << "Р“РѕРґ РѕР±СѓС‡РµРЅРёСЏ: " << this->year_of_study << endl;
+    cout << "РћР±СЉРµРј СЃС‚СЂР°РЅРёС†: " << this->volume_of_page << endl;
+    cout << "Р¦РµРЅР°: " << this->cost << endl;
     cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 }
 
-// метод удаления данных
+// РјРµС‚РѕРґ СѓРґР°Р»РµРЅРёСЏ РґР°РЅРЅС‹С…
 void StudyBook::Delete()
 {
-    this->name = "NONE"; // название
-    this->author = "NONE"; // автор
-    this->year = "NONE"; // год выпуска
-    this->educational_institution = "NONE"; // аннотация
-    this->year_of_study = "NONE"; // жанр
-    this->volume_of_page = "NONE"; // объем страниц
-    this->cost = "NONE"; // цена
+    this->name = "NONE"; // РЅР°Р·РІР°РЅРёРµ
+    this->author = "NONE"; // Р°РІС‚РѕСЂ
+    this->year = "NONE"; // РіРѕРґ РІС‹РїСѓСЃРєР°
+    this->educational_institution = "NONE"; // Р°РЅРЅРѕС‚Р°С†РёСЏ
+    this->year_of_study = "NONE"; // Р¶Р°РЅСЂ
+    this->volume_of_page = "NONE"; // РѕР±СЉРµРј СЃС‚СЂР°РЅРёС†
+    this->cost = "NONE"; // С†РµРЅР°
 }
 
-// метод изменения данных
+// РјРµС‚РѕРґ РёР·РјРµРЅРµРЅРёСЏ РґР°РЅРЅС‹С…
 void StudyBook::Change()
 {
-    cout << "Выберите, что вы хотите изменить:" << endl;
-    cout << "1 - Название \n"
-        << "2 - Автор \n"
-        << "3 - Год выпуска \n"
-        << "4 - Учебное заведение \n"
-        << "5 - Год обучения \n"
-        << "6 - Объем страниц \n"
-        << "7 - Цена \n"
+    cout << "Р’С‹Р±РµСЂРёС‚Рµ, С‡С‚Рѕ РІС‹ С…РѕС‚РёС‚Рµ РёР·РјРµРЅРёС‚СЊ:" << endl;
+    cout << "1 - РќР°Р·РІР°РЅРёРµ \n"
+        << "2 - РђРІС‚РѕСЂ \n"
+        << "3 - Р“РѕРґ РІС‹РїСѓСЃРєР° \n"
+        << "4 - РЈС‡РµР±РЅРѕРµ Р·Р°РІРµРґРµРЅРёРµ \n"
+        << "5 - Р“РѕРґ РѕР±СѓС‡РµРЅРёСЏ \n"
+        << "6 - РћР±СЉРµРј СЃС‚СЂР°РЅРёС† \n"
+        << "7 - Р¦РµРЅР° \n"
         << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 
     string choice;
@@ -358,11 +358,11 @@ void StudyBook::Change()
     }
     catch (const std::exception& e)
     {
-        cout << "Некорректный ввод" << endl;
+        cout << "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ" << endl;
     }
     catch (const char* mssg)
     {
-        cout << "Неверный ввод" << endl;
+        cout << "РќРµРІРµСЂРЅС‹Р№ РІРІРѕРґ" << endl;
     }
 
     string buf;
@@ -370,148 +370,148 @@ void StudyBook::Change()
 
     if (stoi(choice) == 1)
     {
-        cout << "Название: ";
+        cout << "РќР°Р·РІР°РЅРёРµ: ";
         getline(cin, this->name);
         //cin >> this->name;
     }
 
     else if (stoi(choice) == 2)
     {
-        cout << "Автор: ";
+        cout << "РђРІС‚РѕСЂ: ";
         getline(cin, this->author);
         //cin >> this->author;
     }
 
     else if (stoi(choice) == 3)
     {
-        cout << "Год выпуска: ";
+        cout << "Р“РѕРґ РІС‹РїСѓСЃРєР°: ";
         getline(cin, this->year);
         //cin >> year;
     }
 
     else if (stoi(choice) == 4)
     {
-        cout << "Учебное заведение: ";
+        cout << "РЈС‡РµР±РЅРѕРµ Р·Р°РІРµРґРµРЅРёРµ: ";
         getline(cin, this->educational_institution);
         //cin >> educational_institution;
     }
 
     else if (stoi(choice) == 5)
     {
-        cout << "Год обучения: ";
+        cout << "Р“РѕРґ РѕР±СѓС‡РµРЅРёСЏ: ";
         getline(cin, this->year_of_study);
         //cin >> year_of_study;
     }
 
     else if (stoi(choice) == 6)
     {
-        cout << "Объем страниц: ";
+        cout << "РћР±СЉРµРј СЃС‚СЂР°РЅРёС†: ";
         getline(cin, this->volume_of_page);
         //cin >> this->volume_of_page;
     }
 
     else
     {
-        cout << "Цена: ";
+        cout << "Р¦РµРЅР°: ";
         getline(cin, this->cost);
         //cin >> this->cost;
     }
 }
 
-// класс Chancellery
-// конструктор по умолчанию
+// РєР»Р°СЃСЃ Chancellery
+// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 Chancellery::Chancellery()
 {
-    this->type = "NONE"; // название
-    this->color = "NONE"; // автор
-    this->appointment = "NONE"; // год выпуска
-    this->cost = "NONE"; // аннотация
+    this->type = "NONE"; // РЅР°Р·РІР°РЅРёРµ
+    this->color = "NONE"; // Р°РІС‚РѕСЂ
+    this->appointment = "NONE"; // РіРѕРґ РІС‹РїСѓСЃРєР°
+    this->cost = "NONE"; // Р°РЅРЅРѕС‚Р°С†РёСЏ
 
-    cout << "Вызван конструктор по умолчанию класса - Chancellery" << endl;
+    cout << "Р’С‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ РєР»Р°СЃСЃР° - Chancellery" << endl;
 }
 
-// конструктор с параметром
+// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂРѕРј
 Chancellery::Chancellery(string type, string color, string appointment, string cost)
 {
-    this->type = type; // название
-    this->color = color; // автор
-    this->appointment = appointment; // год выпуска
-    this->cost = cost; // аннотация
+    this->type = type; // РЅР°Р·РІР°РЅРёРµ
+    this->color = color; // Р°РІС‚РѕСЂ
+    this->appointment = appointment; // РіРѕРґ РІС‹РїСѓСЃРєР°
+    this->cost = cost; // Р°РЅРЅРѕС‚Р°С†РёСЏ
 
-    cout << "Вызван конструктор с параметром класса - Chancellery" << endl;
+    cout << "Р’С‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂРѕРј РєР»Р°СЃСЃР° - Chancellery" << endl;
 }
 
-// конструктор копирования
+// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 Chancellery::Chancellery(const Chancellery& C)
 {
-    this->type = C.type; // название
-    this->color = C.color; // автор
-    this->appointment = C.appointment; // год выпуска
-    this->cost = C.cost; // аннотация
+    this->type = C.type; // РЅР°Р·РІР°РЅРёРµ
+    this->color = C.color; // Р°РІС‚РѕСЂ
+    this->appointment = C.appointment; // РіРѕРґ РІС‹РїСѓСЃРєР°
+    this->cost = C.cost; // Р°РЅРЅРѕС‚Р°С†РёСЏ
 
-    cout << "Вызван конструктор копирования класса - Chancellery" << endl;
+    cout << "Р’С‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ РєР»Р°СЃСЃР° - Chancellery" << endl;
 }
 
-// деструктор
+// РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 Chancellery::~Chancellery()
 {
-    cout << "Вызван деструктор класса - Chancellery" << endl;
+    cout << "Р’С‹Р·РІР°РЅ РґРµСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР° - Chancellery" << endl;
 }
 
-// основные методы
-// метод установки значения
+// РѕСЃРЅРѕРІРЅС‹Рµ РјРµС‚РѕРґС‹
+// РјРµС‚РѕРґ СѓСЃС‚Р°РЅРѕРІРєРё Р·РЅР°С‡РµРЅРёСЏ
 void Chancellery::Set()
 {
     string buf;
     getline(cin, buf);
 
-    cout << "Введите данные о канцелярии:" << endl;
+    cout << "Р’РІРµРґРёС‚Рµ РґР°РЅРЅС‹Рµ Рѕ РєР°РЅС†РµР»СЏСЂРёРё:" << endl;
 
-    cout << "Тип: ";
+    cout << "РўРёРї: ";
     getline(cin, this->type);
     //cin >> this->type;
 
-    cout << "Цвет: ";
+    cout << "Р¦РІРµС‚: ";
     getline(cin, this->color);
     //cin >> this->color;
 
-    cout << "Назначение: ";
+    cout << "РќР°Р·РЅР°С‡РµРЅРёРµ: ";
     getline(cin, this->appointment);
     //cin >> appointment;
 
-    cout << "Цена: ";
+    cout << "Р¦РµРЅР°: ";
     getline(cin, this->cost);
     //cin >> this->cost;
 }
 
-// метод получения значений
+// РјРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ Р·РЅР°С‡РµРЅРёР№
 void Chancellery::Get()
 {
-    cout << "~~~Информация о канцелярии~~~" << endl;
-    cout << "Тип: " << this->type << endl;
-    cout << "Цвет: " << this->color << endl;
-    cout << "Назначение: " << this->appointment << endl;
-    cout << "Цена: " << this->cost << endl;
+    cout << "~~~РРЅС„РѕСЂРјР°С†РёСЏ Рѕ РєР°РЅС†РµР»СЏСЂРёРё~~~" << endl;
+    cout << "РўРёРї: " << this->type << endl;
+    cout << "Р¦РІРµС‚: " << this->color << endl;
+    cout << "РќР°Р·РЅР°С‡РµРЅРёРµ: " << this->appointment << endl;
+    cout << "Р¦РµРЅР°: " << this->cost << endl;
     cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 }
 
-// метод удаления данных
+// РјРµС‚РѕРґ СѓРґР°Р»РµРЅРёСЏ РґР°РЅРЅС‹С…
 void Chancellery::Delete()
 {
-    this->type = "NONE"; // название
-    this->color = "NONE"; // автор
-    this->appointment = "NONE"; // год выпуска
-    this->cost = "NONE"; // аннотация
+    this->type = "NONE"; // РЅР°Р·РІР°РЅРёРµ
+    this->color = "NONE"; // Р°РІС‚РѕСЂ
+    this->appointment = "NONE"; // РіРѕРґ РІС‹РїСѓСЃРєР°
+    this->cost = "NONE"; // Р°РЅРЅРѕС‚Р°С†РёСЏ
 }
 
-// метод изменения данных
+// РјРµС‚РѕРґ РёР·РјРµРЅРµРЅРёСЏ РґР°РЅРЅС‹С…
 void Chancellery::Change()
 {
-    cout << "Выберите, что вы хотите изменить:" << endl;
-    cout << "1 - Тип \n"
-        << "2 - Цвет \n"
-        << "3 - Назначение \n"
-        << "4 - Цена \n"
+    cout << "Р’С‹Р±РµСЂРёС‚Рµ, С‡С‚Рѕ РІС‹ С…РѕС‚РёС‚Рµ РёР·РјРµРЅРёС‚СЊ:" << endl;
+    cout << "1 - РўРёРї \n"
+        << "2 - Р¦РІРµС‚ \n"
+        << "3 - РќР°Р·РЅР°С‡РµРЅРёРµ \n"
+        << "4 - Р¦РµРЅР° \n"
         << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 
     string choice;
@@ -527,11 +527,11 @@ void Chancellery::Change()
     }
     catch (const std::exception& e)
     {
-        cout << "Некорректный ввод" << endl;
+        cout << "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ" << endl;
     }
     catch (const char* mssg)
     {
-        cout << "Неверный ввод" << endl;
+        cout << "РќРµРІРµСЂРЅС‹Р№ РІРІРѕРґ" << endl;
     }
 
     string buf;
@@ -539,34 +539,34 @@ void Chancellery::Change()
 
     if (stoi(choice) == 1)
     {
-        cout << "Тип: ";
+        cout << "РўРёРї: ";
         getline(cin, this->type);
         //cin >> this->type;
     }
 
     else if (stoi(choice) == 2)
     {
-        cout << "Цвет: ";
+        cout << "Р¦РІРµС‚: ";
         getline(cin, this->color);
         //cin >> this->color;
     }
 
     else if (stoi(choice) == 3)
     {
-        cout << "Назначение: ";
+        cout << "РќР°Р·РЅР°С‡РµРЅРёРµ: ";
         getline(cin, this->appointment);
         //cin >> appointment;
     }
 
     else
     {
-        cout << "Цена: ";
+        cout << "Р¦РµРЅР°: ";
         getline(cin, this->cost);
         //cin >> this->cost;
     }
 }
 
-// методты GetType
+// РјРµС‚РѕРґС‚С‹ GetType
 
 int Book::TypeID()
 {

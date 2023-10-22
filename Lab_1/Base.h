@@ -1,51 +1,50 @@
-#pragma once
-#ifndef BASE_H
+п»ї#ifndef BASE_H
 #define BASE_H
 
 #include <string>
 using namespace std;
 
-// ОСНОВНОЙ КЛАСС
+// РћРЎРќРћР’РќРћР™ РљР›РђРЎРЎ
 class Base
 {
-    // основные методы
+    // РѕСЃРЅРѕРІРЅС‹Рµ РјРµС‚РѕРґС‹
 public:
     Base();
     Base(int size);
     Base(const Base& B);
     ~Base();
-    virtual void Set() = 0; // добавить элемент
-    virtual void Get() = 0; // получить элемент
-    virtual void Delete() = 0; // удалить элемент
-    virtual void Change() = 0; // изменить данные
-    virtual void Load(int count, string line) = 0; // для выгрузки данных из файла
-    virtual string Save(int count) = 0; // для выгрузки данных в файл
-    virtual int TypeID() = 0; // чтобы понят студент или  учитель или администрация
+    virtual void Set() = 0; // РґРѕР±Р°РІРёС‚СЊ СЌР»РµРјРµРЅС‚
+    virtual void Get() = 0; // РїРѕР»СѓС‡РёС‚СЊ СЌР»РµРјРµРЅС‚
+    virtual void Delete() = 0; // СѓРґР°Р»РёС‚СЊ СЌР»РµРјРµРЅС‚
+    virtual void Change() = 0; // РёР·РјРµРЅРёС‚СЊ РґР°РЅРЅС‹Рµ
+    virtual void Load(int count, string line) = 0; // РґР»СЏ РІС‹РіСЂСѓР·РєРё РґР°РЅРЅС‹С… РёР· С„Р°Р№Р»Р°
+    virtual string Save(int count) = 0; // РґР»СЏ РІС‹РіСЂСѓР·РєРё РґР°РЅРЅС‹С… РІ С„Р°Р№Р»
+    virtual int TypeID() = 0; // С‡С‚РѕР±С‹ РїРѕРЅСЏС‚ СЃС‚СѓРґРµРЅС‚ РёР»Рё  СѓС‡РёС‚РµР»СЊ РёР»Рё Р°РґРјРёРЅРёСЃС‚СЂР°С†РёСЏ
 };
 
 class Book :public Base
 {
 private:
-    string name; // название
-    string author; // автор
-    string year; // год выпуска
-    string annotation; // аннотация
-    string genre; // жанр
-    string volume_of_page; // объем страниц
-    string cost; // цена
+    string name; // РЅР°Р·РІР°РЅРёРµ
+    string author; // Р°РІС‚РѕСЂ
+    string year; // РіРѕРґ РІС‹РїСѓСЃРєР°
+    string annotation; // Р°РЅРЅРѕС‚Р°С†РёСЏ
+    string genre; // Р¶Р°РЅСЂ
+    string volume_of_page; // РѕР±СЉРµРј СЃС‚СЂР°РЅРёС†
+    string cost; // С†РµРЅР°
 
 public:
-    // создание конструкторов и деструктора
-    Book(); // конструктор по умолчанию
-    Book(string name, string author, string year, string annotation, string genre, string volume_of_page, string cost); // конструктор с параметром
-    Book(const Book& B); // конструктор копирования
-    ~Book(); // деструктор
+    // СЃРѕР·РґР°РЅРёРµ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂРѕРІ Рё РґРµСЃС‚СЂСѓРєС‚РѕСЂР°
+    Book(); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
+    Book(string name, string author, string year, string annotation, string genre, string volume_of_page, string cost); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂРѕРј
+    Book(const Book& B); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+    ~Book(); // РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 
-    // создание основных методов
-    void Set() override; // добавление данных о книге
-    void Get() override; // получениnaе данных о книге
-    void Delete() override; // удаление данных о книге
-    void Change() override; // изменение данных о книге
+    // СЃРѕР·РґР°РЅРёРµ РѕСЃРЅРѕРІРЅС‹С… РјРµС‚РѕРґРѕРІ
+    void Set() override; // РґРѕР±Р°РІР»РµРЅРёРµ РґР°РЅРЅС‹С… Рѕ РєРЅРёРіРµ
+    void Get() override; // РїРѕР»СѓС‡РµРЅРёnaРµ РґР°РЅРЅС‹С… Рѕ РєРЅРёРіРµ
+    void Delete() override; // СѓРґР°Р»РµРЅРёРµ РґР°РЅРЅС‹С… Рѕ РєРЅРёРіРµ
+    void Change() override; // РёР·РјРµРЅРµРЅРёРµ РґР°РЅРЅС‹С… Рѕ РєРЅРёРіРµ
     void Load(int count, string line) override;
     string Save(int count) override;
     int TypeID() override;
@@ -54,26 +53,26 @@ public:
 class StudyBook :public Base
 {
 private:
-    string name; // название
-    string author; // автор
-    string year; // год выпуска
-    string educational_institution; // учебное заведение
-    string year_of_study; // год обучения
-    string volume_of_page; // объем страниц
-    string cost; // цена
+    string name; // РЅР°Р·РІР°РЅРёРµ
+    string author; // Р°РІС‚РѕСЂ
+    string year; // РіРѕРґ РІС‹РїСѓСЃРєР°
+    string educational_institution; // СѓС‡РµР±РЅРѕРµ Р·Р°РІРµРґРµРЅРёРµ
+    string year_of_study; // РіРѕРґ РѕР±СѓС‡РµРЅРёСЏ
+    string volume_of_page; // РѕР±СЉРµРј СЃС‚СЂР°РЅРёС†
+    string cost; // С†РµРЅР°
 
 public:
-    // создание конструкторов и деструктора
-    StudyBook(); // конструктор по умолчанию
-    StudyBook(string name, string author, string year, string educational_institution, string year_of_study, string volume_of_page, string cost); // конструктор с параметром
-    StudyBook(const StudyBook& S); // конструктор копирования
-    ~StudyBook(); // деструктор
+    // СЃРѕР·РґР°РЅРёРµ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂРѕРІ Рё РґРµСЃС‚СЂСѓРєС‚РѕСЂР°
+    StudyBook(); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
+    StudyBook(string name, string author, string year, string educational_institution, string year_of_study, string volume_of_page, string cost); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂРѕРј
+    StudyBook(const StudyBook& S); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+    ~StudyBook(); // РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 
-    // создание основных методов
-    void Set() override; // добавление данных об учебнике
-    void Get() override; // получение данных об учебнике
-    void Delete() override; // удаление данных об учебнике
-    void Change() override; // изменение данных об учебнике
+    // СЃРѕР·РґР°РЅРёРµ РѕСЃРЅРѕРІРЅС‹С… РјРµС‚РѕРґРѕРІ
+    void Set() override; // РґРѕР±Р°РІР»РµРЅРёРµ РґР°РЅРЅС‹С… РѕР± СѓС‡РµР±РЅРёРєРµ
+    void Get() override; // РїРѕР»СѓС‡РµРЅРёРµ РґР°РЅРЅС‹С… РѕР± СѓС‡РµР±РЅРёРєРµ
+    void Delete() override; // СѓРґР°Р»РµРЅРёРµ РґР°РЅРЅС‹С… РѕР± СѓС‡РµР±РЅРёРєРµ
+    void Change() override; // РёР·РјРµРЅРµРЅРёРµ РґР°РЅРЅС‹С… РѕР± СѓС‡РµР±РЅРёРєРµ
     void Load(int count, string line) override;
     string Save(int count) override;
     int TypeID() override;
@@ -82,23 +81,23 @@ public:
 class Chancellery :public Base
 {
 private:
-    string type; // тип
-    string color; // цвет
-    string appointment; // назначение
-    string cost; // цена
+    string type; // С‚РёРї
+    string color; // С†РІРµС‚
+    string appointment; // РЅР°Р·РЅР°С‡РµРЅРёРµ
+    string cost; // С†РµРЅР°
 
 public:
-    // создание конструкторов и деструктора
-    Chancellery(); // конструктор по умолчанию
-    Chancellery(string type, string color, string appointment, string cost); // конструктор с параметром
-    Chancellery(const Chancellery& C); // конструктор копирования
-    ~Chancellery(); // деструктор
+    // СЃРѕР·РґР°РЅРёРµ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂРѕРІ Рё РґРµСЃС‚СЂСѓРєС‚РѕСЂР°
+    Chancellery(); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
+    Chancellery(string type, string color, string appointment, string cost); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂРѕРј
+    Chancellery(const Chancellery& C); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+    ~Chancellery(); // РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 
-    // создание основных методов
-    void Set() override; // добавление данных о канцелярии
-    void Get() override; // получение данных о канцелярии
-    void Delete() override; // удаление данных о канцелярии
-    void Change() override; // изменение данных о канцелярии
+    // СЃРѕР·РґР°РЅРёРµ РѕСЃРЅРѕРІРЅС‹С… РјРµС‚РѕРґРѕРІ
+    void Set() override; // РґРѕР±Р°РІР»РµРЅРёРµ РґР°РЅРЅС‹С… Рѕ РєР°РЅС†РµР»СЏСЂРёРё
+    void Get() override; // РїРѕР»СѓС‡РµРЅРёРµ РґР°РЅРЅС‹С… Рѕ РєР°РЅС†РµР»СЏСЂРёРё
+    void Delete() override; // СѓРґР°Р»РµРЅРёРµ РґР°РЅРЅС‹С… Рѕ РєР°РЅС†РµР»СЏСЂРёРё
+    void Change() override; // РёР·РјРµРЅРµРЅРёРµ РґР°РЅРЅС‹С… Рѕ РєР°РЅС†РµР»СЏСЂРёРё
     void Load(int count, string line) override;
     string Save(int count) override;
     int TypeID() override;
